@@ -1,0 +1,24 @@
+/* FOOTER STYLING */
+body{
+    background-color: #727271;
+}
+#footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+#footer-icons p {
+    margin: 5px 0px 3px 0px;
+}
+#footer-icons img {
+    height: 20px;
+    padding: 5px;
+    margin-top: 0px;
+    margin-bottom: 8px;
+}
+
+#footer-copyright {
+    font-size: 13px;
+}

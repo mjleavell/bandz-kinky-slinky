@@ -1,0 +1,59 @@
+body {
+    background-color: #5f605d;
+    font-family: 'Roboto', sans-serif;
+}
+
+#events {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    background-image: url(https://img.apmcdn.org/cc4fb0e9f3b4cc9793551872029ef3fcb76c40a6/uncropped/1b74f0-20170201-rockin-1000.jpg);
+    background-size: 100% 100%;
+}
+
+.eventsDiv {
+    display: flex;
+    flex-flow: column wrap;
+    line-height: 0.3;
+    width: 33.33%;
+}
+
+#eventsHeader {
+    text-align: center;
+    background-color: #ef6817;
+    margin: auto;
+    width: 320px;
+    border: 2px black solid;
+    border-radius: 3px;
+}
+
+.jsEventsDiv1 {
+    background-color: #ef6817;
+    border: 1px black solid;
+    padding-left: 5px;
+    opacity: 0.7;
+}
+
+.jsEventsDiv2 {
+    background-color: #727271;
+    border: 1px black solid;
+    padding-left: 5px;
+    opacity: 0.7;
+}
+
+.jsEventsDiv3 {
+    background-color: #383838;
+    border: 1px black solid;
+    padding-left: 5px;
+    opacity: 0.85;
+}
+
+.jsEventsMonth {
+    text-align: center;
+    opacity: 1;
+    background-color: #21201f;
+    color: wheat;
+    height: 80px;
+    margin: 0;
+    line-height: 3;
+}

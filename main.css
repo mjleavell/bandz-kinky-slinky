@@ -29,7 +29,7 @@ nav {
     margin-left: 10px;
 }
 
-button {
+#band-membersNav, #scheduleNav, #homeNav, #albumsNav {
     background-color: #727271;
     border: 2px #727271 outset;
     border-radius: 4px;

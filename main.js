@@ -20,6 +20,13 @@ const events = {
             venue: 'Venue 3',
             time: '8:00',
             description: 'Description 3'
+        },
+        {
+            name: 'Event 11',
+            date: '29',
+            venue: 'Venue 11',
+            time: '8:30',
+            description: 'Description 11'
         }
     ],
     May: [
@@ -73,6 +80,13 @@ const events = {
             venue: 'Venue 10',
             time: '10:00',
             description: 'Description 10'
+        },
+        {
+            name: 'Event 12',
+            date: '22',
+            venue: 'Venue 12',
+            time: '12:00',
+            description: 'Description 12'
         }
     ]
 };
@@ -123,7 +137,7 @@ function buttonsHover() {
         });
         el.addEventListener('mouseout', function() {
             let btnColor = event.target; 
-            btnColor.setAttribute('style', 'background-color:#727271');
+            btnColor.setAttribute('style', 'background-color:#21201f');
         });
     });
 }

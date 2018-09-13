@@ -77,6 +77,24 @@ const events = {
     ]
 };
 
+const year = {
+    January: 31,
+    February: 28,
+    March: 31,
+    April: 30,
+    May: 31,
+    June: 30,
+    July: 31,
+    August: 31,
+    September: 30,
+    October: 31,
+    November: 30,
+    December: 31
+}
+
+let date = 0;
+let dateCard = `<h4 class='dateCardHeader'>${date}</h4>`;
+
 const printToDom = (stringToPrint, divId) => {
     document.getElementById(divId).innerHTML = stringToPrint;
 }
@@ -105,6 +123,25 @@ function eventLister(month) {
     printToDom(eventString, 'events'+month+'Div');
 }
 
+function monthCardSelector() {
+    document.getElementById('calendarMenu').addEventListener('click', function() {
+        let menuSelect = event.target.id;
+        let monthSelect = year.April;
+        date = 0;
+        for(let i = 0; i < monthSelect; i++) {
+            dateCard = `<h4 class='dateCardHeader'>${date}</h4>`;
+            let dateString = ''+date;
+            printToDom(dateCard, 'dateDiv'+dateString);            
+            date++;
+        }
+    })
+}
+
+function dateCardSelector() {
+    
+}
+
 eventLister('April');
 eventLister('May');
 eventLister('June');
+monthCardSelector();

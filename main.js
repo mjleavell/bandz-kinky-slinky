@@ -196,9 +196,20 @@ function dateCardSelector() {
     })
 }
 
+function calendarAtPageLoad() {
+        date = 0;
+        for(let i = 0; i < year.January; i++) {
+            date++;
+            dateCard = `<h4 class='dateCardHeader'>${date}</h4>`;
+            let dateString = ''+date;
+            printToDom(dateCard, 'dateDiv'+dateString);            
+        }
+}
+
 buttonsHover();
 eventLister('April');
 eventLister('May');
 eventLister('June');
 monthCardSelector();
 dateCardSelector();
+calendarAtPageLoad();

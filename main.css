@@ -41,6 +41,8 @@ nav {
     border-radius: 4px;
 }
 
+/* SCHEDULE PAGE STYLING */
+
 #events {
     display: flex;
     flex-flow: row;
@@ -118,4 +120,29 @@ nav {
     width: 195px;
     font-size: 150%;
     background-color: #ef6817;
+}
+
+/* FOOTER STYLING */
+#footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    color: white;
+    background-color: #21201f;
+    padding: 8px 0px 0px 0px;
+}
+
+#footer-icons p {
+    margin: 5px 0px 5px 0px;
+    font-size: 20px;
+}
+#footer-icons img {
+    height: 20px;
+    /* padding: 5px; */
+    margin: 6px 8px 8px 8px;
+}
+
+#footer-copyright {
+    font-size: 14px;
 }

@@ -18,11 +18,12 @@ h1, h2, h3, h4, h5, h6 {
     margin: 10px 30px 10px 30px;
 }
 
-.homepage-art img {
+#homepage-art img {
     width: 70%;
     display: block;
     text-align: center;
 }
+
 .homepage-videos {
     display: flex;
     flex-flow: row wrap;
@@ -31,7 +32,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .homepage-videos iframe {
     padding: 10px 25px 10px 25px;
-    /* margin: 10px; */
 }
 
 /* FOOTER STYLING */

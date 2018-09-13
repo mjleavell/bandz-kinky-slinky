@@ -22,6 +22,7 @@ nav {
 
 #navbar li {
     display: inline;
+    color: white;
 }
 
 #homeNav {
@@ -31,7 +32,8 @@ nav {
 }
 
 #band-membersNav, #scheduleNav, #homeNav, #albumsNav {
-    background-color: #727271;
-    border: 2px #727271 outset;
+    background-color: #21201f;
+    border: 2px #21201f outset;
     border-radius: 4px;
+    color: white;
 }

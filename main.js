@@ -7,7 +7,7 @@ function buttonsHover() {
         });
         el.addEventListener('mouseout', function() {
             let btnColor = event.target; 
-            btnColor.setAttribute('style', 'background-color:#727271');
+            btnColor.setAttribute('style', 'background-color:#21201f');
         });
     });
 }

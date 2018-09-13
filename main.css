@@ -2,7 +2,29 @@ body {
     background-color: #5f605d;
     margin: 0px;
     padding: 0px;
+    font-family: 'Roboto', sans-serif;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* HOMEPAGE STYLING*/
+.homepage h1 {
+    margin: 10px 30px 10px 30px;
+}
+
+.homepage-videos {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.homepage-videos iframe {
+    padding: 10px 25px 10px 25px;
+    /* margin: 10px; */
+}
+
 /* FOOTER STYLING */
 #footer {
     text-align: center;

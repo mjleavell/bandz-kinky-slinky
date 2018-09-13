@@ -57,3 +57,30 @@ body {
     margin: 0;
     line-height: 3;
 }
+
+#dates {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: 4.5%
+}
+
+.dateClass {
+    width: 13%;
+    border: 1px black solid;
+    height: 150px;
+    line-height: 0.3;
+    padding-left: 5px;
+    background-color: #383838;
+}
+
+#calendarMenu {
+    margin-left: 4.5%;
+    margin-top: 30px;
+    width: 100px;
+}
+
+#select {
+    width: 195px;
+    font-size: 150%;
+    background-color: #ef6817;
+}

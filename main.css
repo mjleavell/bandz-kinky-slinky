@@ -58,12 +58,11 @@ nav {
 
 #eventsHeader {
     text-align: center;
-    background-color: #ef6817;
     margin: auto;
-    width: 320px;
-    border: 2px black solid;
-    border-radius: 3px;
-    margin-top: 70px;
+    margin-top: 150px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 35px;
 }
 
 .jsEventsDiv1 {

@@ -1,3 +1,42 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 2px black solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #21201f;
+    height: 50px;
+    z-index: 5000;
+}
+
+#navbar {
+    list-style-type: none;
+    padding-right: 10px; 
+    margin-top: auto; 
+    margin-bottom: auto;
+}
+
+#navbar li {
+    display: inline;
+    color: white;
+}
+
+#homeNav {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+#band-membersNav, #scheduleNav, #homeNav, #albumsNav {
+    background-color: #21201f;
+    border: 2px #21201f outset;
+    border-radius: 4px;
+    color: white;
+  
 body {
     background-color: #5f605d;
     margin: 0px;

@@ -1,48 +1,90 @@
 body {
-    /* background-color: #5f605d; */
+    background-color: #5f605d;
     margin: 0px;
     padding: 0px;
     font-family: 'Roboto', sans-serif;
+    position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Lato', sans-serif;
     font-size: 35px;
     /* color: #383838; */
-    font-weight: 900
+    font-weight: 900;
+    color: #ef6817;
 }
 
+/* NAVBAR STYLING */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 2px black solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #21201f;
+    height: 50px;
+    z-index: 5000;
+}
+
+#navbar {
+    list-style-type: none;
+    padding-right: 10px; 
+    margin-top: auto; 
+    margin-bottom: auto;
+}
+
+#navbar li {
+    display: inline;
+    color: white;
+}
+
+#homeNav {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+#band-membersNav, #scheduleNav, #homeNav, #albumsNav {
+    background-color: #21201f;
+    border: 2px #21201f outset;
+    border-radius: 4px;
+    color: white;
+}
 
 /* HOMEPAGE STYLING*/
-.homepage h1 {
-    margin: 10px 30px 10px 30px;
+#homepage-art {
+    margin: 40px;
 }
 
 #homepage-art img {
-    width: 70%;
     display: block;
     text-align: center;
+    width: 70%;
 }
 
-.homepage-videos {
+#homepage-videos {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    margin-bottom: 80px;
 }
 
-.homepage-videos iframe {
+#homepage-videos iframe {
     padding: 10px 25px 10px 25px;
 }
 
 /* FOOTER STYLING */
 #footer {
     text-align: center;
-    position: fixed;
-    bottom: 0px;
+    position: absolute;
     width: 100%;
     color: white;
     background-color: #21201f;
-    padding: 8px 0px 0px 0px;
+    padding-top: 1rem;
 }
 
 #footer-icons p {
@@ -51,10 +93,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 #footer-icons img {
     height: 20px;
-    /* padding: 5px; */
+    padding: 5px;
     margin: 6px 8px 8px 8px;
 }
 
 #footer-copyright {
-    font-size: 14px;
+    font-size: 12px;
 }

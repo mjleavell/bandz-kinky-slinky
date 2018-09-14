@@ -7,22 +7,32 @@
     <title>Kinky Slinky</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900|Roboto+Condensed:400,700,900|Lato:400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Lato" rel="stylesheet">
 </head>
 
 <body>
-
+    <!-- NAVIGATION BAR -->
+    <nav id='navMain'>
+        <button type='button' href='index.html' id='homeNav'>Home</button>
+        <ul id='navbar'>
+            <li><button type="button" href='html/band-member.html' id='band-membersNav'>Meet the Band</button></li>
+            <li><button type="button" href='html/schedule.html' id='scheduleNav'>Schedule</button></li>
+            <li><button type='button' href='html/albums.html' id='albumsNav'>Albums</button></li>
+        </ul>
+    </nav>
+    <!-- HOMEPAGE -->
     <div class="homepage">
         <div id="homepage-art">
-            <img id="homepage-art-img" src="./images/kshomepage.png" alt="">
+            <img src="./images/kshomepage.png" alt="">
         </div>
-        <h1>Recent Performances</h1>
-        <div class="homepage-videos">
-            <iframe id="hp-video-simplify" width="560" height="315" src="https://www.youtube.com/embed/4r-dDq4AMQ4?start=6" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            <iframe id="hp-video-cough" width="560" height="315" src="https://www.youtube.com/embed/jrgiUfcT8bA?start=23" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <h1>VIDEOS</h1>
+        <div id="homepage-videos">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/oPbRT9nDF3A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/4r-dDq4AMQ4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
     </div>
-        <footer id="footer">        
+    <!-- FOOTER -->
+    <footer id="footer">
         <div id="footer-icons">
             <p>find us online</p>
             <a id="twitter" href="http://www.twitter.com"><img src="./images/twitter.png" alt=""></a>
@@ -32,6 +42,7 @@
         </div>
         <p id="footer-copyright">©2018 Arceneaux | Fisher | Leavell | Nelson</p>
     </footer>
+    <!-- JAVASCRIPT -->
     <script src="main.js"></script>
 </body>
 

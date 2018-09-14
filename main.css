@@ -43,6 +43,12 @@ nav {
     color: white;
 }
 
+#homeAnchor {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
 /* SCHEDULE PAGE STYLING */
 
 #events {

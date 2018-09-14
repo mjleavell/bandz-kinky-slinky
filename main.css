@@ -145,6 +145,20 @@ nav {
     font-size: 35px;
 }
 
+#week {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin-left: 1.85%;
+    margin-bottom: 0;
+}
+
+#week li {
+    width: 191.6px;
+    text-align: center;
+    border: 1px black solid;
+}
+
 /* FOOTER STYLING */
 #footer {
     text-align: center;

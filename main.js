@@ -91,36 +91,38 @@ const events = {
     ]
 };
 
-const year = {
-    January: 31,
-    February: 28,
-    March: 31,
-    April: 30,
-    May: 31,
-    June: 30,
-    July: 31,
-    August: 31,
-    September: 30,
-    October: 31,
-    November: 30,
-    December: 31
-}
+let year = [
+    {month: 31, firstDay: 0},
+    {month: 28, firstDay: 0},
+    {month: 31, firstDay: 0},
+    {month: 30, firstDay: 0},
+    {month: 31, firstDay: 0},
+    {month: 30, firstDay: 0},
+    {month: 31, firstDay: 0},
+    {month: 31, firstDay: 0},
+    {month: 30, firstDay: 0},
+    {month: 31, firstDay: 0},
+    {month: 30, firstDay: 0},
+    {month: 31, firstDay: 0}
+]
 
 const monthObject = {
-    'January': year.January,
-    'February': year.February,
-    'March': year.March,
-    'April': year.April,
-    'May': year.May,
-    'June': year.June,
-    'July': year.July,
-    'August': year.August,
-    'September': year.September,
-    'October': year.October,
-    'November': year.November,
-    'December': year.December
+    January: year[0],
+    February: year[1],
+    March: year[2],
+    April: year[3],
+    May: year[4],
+    June: year[5],
+    July: year[6],
+    August: year[7],
+    September: year[8],
+    October: year[9],
+    November: year[10],
+    December: year[11]
 }
 
+const januaryFirstDay = 1;
+let first = -1;
 let date = 0;
 let dateCard = '';
 
@@ -166,21 +168,24 @@ function eventLister(month) {
     printToDom(eventString, 'events'+month+'Div');
 }
 
+
 function monthCardSelector() {
     document.getElementById('calendarMenu').addEventListener('click', function() {
         let menuSelect = document.getElementById('select').value;
-        let monthSelect = monthObject[menuSelect];
+        let monthSelect = monthObject[menuSelect].month;
         date = 0;
-        for(let i = 0; i < 31; i++) {
+        for(let i = 0; i < 37; i++) {
             date++;
             dateCard = `<h4 class='dateCardHeader'></h4>`;
             let dateString = ''+date;
             printToDom(dateCard, 'dateDiv'+dateString);            
         }
-        date = 0;
+        let dateHeader = 0;
+        date = monthObject[menuSelect].firstDay;
         for(let i = 0; i < monthSelect; i++) {
             date++;
-            dateCard = `<h4 class='dateCardHeader'>${date}</h4>`;
+            dateHeader++;
+            dateCard = `<h4 class='dateCardHeader'>${dateHeader}</h4>`;
             let dateString = ''+date;
             printToDom(dateCard, 'dateDiv'+dateString);            
         }
@@ -189,8 +194,9 @@ function monthCardSelector() {
 
 function eventListerCalendar(month) {
     let eventClass = '';
+    let dateFirst = monthObject[month].firstDay;
     for(let i = 0; i < events[month].length; i++) {
-        let dateString = events[month][i].date;
+        let dateString = '' + (parseInt(events[month][i].date) + dateFirst);
         let eventString = document.getElementById('dateDiv'+dateString).innerHTML;
         eventString +=  `<div class=${eventClass}>`
         eventString +=      `<h3 class='jsEventsHeader'>${events[month][i].name}</h3>`
@@ -211,16 +217,35 @@ function dateCardSelector() {
 }
 
 function calendarAtPageLoad() {
-        date = 0;
-        for(let i = 0; i < year.January; i++) {
+        let dateHeader = 0;
+        date = januaryFirstDay;
+        for(let i = 0; i < year[0].month; i++) {
             date++;
-            dateCard = `<h4 class='dateCardHeader'>${date}</h4>`;
+            dateHeader++;
+            dateCard = `<h4 class='dateCardHeader'>${dateHeader}</h4>`;
             let dateString = ''+date;
             printToDom(dateCard, 'dateDiv'+dateString);            
         }
 }
 
+function firstDayOfMonth() {
+    for(let i = 0; i <year.length; i++) {    
+        if(first === -1) {
+            first = januaryFirstDay;
+            year[0].firstDay = first;
+        }
+        else {            
+            first = first + year[(i-1)].month - 28;
+            if(first === 7) {
+                first = 0;
+            }
+            year[i].firstDay = first;
+        }
+    }
+}
+
 buttonsHover();
+firstDayOfMonth();
 eventLister('April');
 eventLister('May');
 eventLister('June');

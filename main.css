@@ -1,0 +1,9 @@
+#picture-container{
+    display:flex;
+    justify-content: space-around;
+}
+
+.mem-pic{
+    width:300px;
+    border-radius: 50%;
+}

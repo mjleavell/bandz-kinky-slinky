@@ -1,29 +1,257 @@
 body {
     background-color: #5f605d;
+    font-family: 'Roboto', sans-serif;
     margin: 0px;
     padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    background-image: url(./images/brickbackground.jpg);
+    background-attachment: fixed;
+    }
+    
+ h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
 }
+
+/* NAVBAR STYLING */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 2px black solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #21201f;
+    height: 50px;
+    z-index: 5000;
+}
+
+#navbar {
+    list-style-type: none;
+    padding-right: 10px; 
+    margin-top: auto; 
+    margin-bottom: auto;
+}
+
+#navbar li {
+    display: inline;
+    color: white;
+}
+
+#homeNav {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+#band-membersNav, #scheduleNav, #homeNav, #albumsNav {
+    background-color: #21201f;
+    border: 2px #21201f outset;
+    border-radius: 4px;
+    color: white;
+}
+
+#homeAnchor {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+/* SCHEDULE PAGE STYLING */
+
+#events {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    background-image: url(https://img.apmcdn.org/cc4fb0e9f3b4cc9793551872029ef3fcb76c40a6/uncropped/1b74f0-20170201-rockin-1000.jpg);
+    background-size: 100% 100%;
+}
+
+.eventsDiv {
+    display: flex;
+    flex-flow: column wrap;
+    line-height: 0.3;
+    width: 33.33%;
+}
+
+#eventsHeader {
+    text-align: center;
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 35px;
+}
+
+.jsEventsDiv1 {
+    background-color: rgb(239, 104, 23,0.7);
+    border: 1px black solid;
+    padding-left: 5px;
+}
+
+.jsEventsDiv2 {
+    background-color: rgb(114, 114, 113,0.7);
+    border: 1px black solid;
+    padding-left: 5px;
+}
+
+.jsEventsDiv3 {
+    background-color: rgb(56, 56, 56,0.85);
+    border: 1px black solid;
+    padding-left: 5px;
+}
+
+.jsEventsMonth {
+    text-align: center;
+    opacity: 1;
+    background-color: #21201f;
+    color: wheat;
+    height: 80px;
+    margin: 0;
+    line-height: 3;
+}
+
+#dates {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: 4.5%
+}
+
+.dateClass {
+    width: 13%;
+    border: 1px black solid;
+    height: 150px;
+    line-height: 0.3;
+    padding-left: 5px;
+    background-color: #383838;
+}
+
+#calendarMenu {
+    margin-left: 4.5%;
+    display: inline;
+}
+
+#calendarButton {
+    margin-left: 10px;
+    font-size: 130%;
+    background-color: #21201f;
+    color: white;
+    border: 2px #21201f outset;
+    border-radius: 4px;
+    padding-top: 4px;
+}
+
+#select {
+    width: 195px;
+    font-size: 150%;
+    background-color: #21201f;
+    padding-left: 5px;
+    color: white;
+    border: 2px #21201f outset;
+    border-radius: 4px;
+}
+
+#calendar {
+    margin-bottom: 180px;
+}
+
+#calendarHeader {
+    text-align: center;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 35px;
+}
+
+#week {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin-left: 1.85%;
+    margin-bottom: 0;
+}
+
+#week li {
+    width: 193.6px;
+    text-align: center;
+    border: 1px black solid;
+    background-color: #383838;
+}
+
+.jsCalendar {
+    background-color: #ef6817;
+    width: 13%;
+    border: 1px black solid;
+    height: 150px;
+    line-height: 0.3;
+    padding-left: 5px;
+}
+    /* HOMEPAGE STYLING*/
+.wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.homepage h1{
+    margin-top: 10%;
+}
+
+#homepage-art {
+    border: 4px #21201f outset;
+    margin: 5%;
+}
+
+#homepage-art img {
+    display: block;
+    align-content: center;
+    width: 100%;
+}
+
+#homepage-videos {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#homepage-videos iframe {
+    margin: 10px 25px 50px 25px;
+    border: 4px #21201f outset;
+>>>>>>> master
+}
+
 /* FOOTER STYLING */
 #footer {
     text-align: center;
-    position: fixed;
-    bottom: 0px;
+    position: relative;
+    bottom: 0;
     width: 100%;
     color: white;
     background-color: #21201f;
-    padding: 8px 0px 0px 0px;
+    padding-top: 1rem;
 }
 
 #footer-icons p {
     margin: 5px 0px 5px 0px;
     font-size: 20px;
 }
+
 #footer-icons img {
     height: 20px;
-    /* padding: 5px; */
-    margin: 6px 8px 8px 8px;
+    padding: 5px;
+    margin: 8px;
 }
 
 #footer-copyright {
-    font-size: 14px;
+    font-size: 12px;
+    padding-bottom: 8px;
+    margin-bottom: 0px;
+    margin-top: 8px;
 }

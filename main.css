@@ -53,6 +53,12 @@ nav {
     color: white;
 }
 
+#homeAnchor {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
 /* HOMEPAGE STYLING*/
 .wrapper {
     background-image: url(./images/brickbackground.jpg);

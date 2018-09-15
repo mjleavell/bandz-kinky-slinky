@@ -1,8 +1,12 @@
 body {
-    background-color: #5f605d;
+    /* background-color: #5f605d; */
     margin: 0px;
     padding: 0px;
     font-family: 'Roboto', sans-serif;
+    background-image: url(./images/brickbackground.jpg);
+    background-attachment: fixed;
+    }
+    
 }
  h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto Condensed', sans-serif;
@@ -61,10 +65,8 @@ nav {
 
 /* HOMEPAGE STYLING*/
 .wrapper {
-    background-image: url(./images/brickbackground.jpg);
     padding-top: 50px;
     padding-bottom: 50px;
-    background-attachment: fixed;
 }
 
 .homepage h1{

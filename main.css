@@ -190,6 +190,7 @@ nav {
     line-height: 0.3;
     padding-left: 5px;
 }
+
     /* HOMEPAGE STYLING*/
 .wrapper {
     padding-top: 50px;
@@ -209,6 +210,7 @@ nav {
     display: block;
     align-content: center;
     width: 100%;
+    height: auto;
 }
 
 #homepage-videos {
@@ -224,12 +226,46 @@ nav {
 }
 
 #homepage-form {
-    color:white;
-    background-color: #383838;
-    margin: 40px;
-    padding: 20px;
+    background-color: rgb(114,114,113,0.9);
+    width: 40%;
+    padding: 20px 50px 20px 50px;
+    margin: 20px auto 20px auto;
+    border: 2px #21201f outset;
+    border-radius: 10px;
 }
 
+#homepage-form h3 {
+    margin-top: 5px;
+    margin-bottom: 7px;
+    text-align: center;
+    color: #21201f;
+}
+
+#homepage-form div {
+    padding-bottom: 10px;
+}
+
+#homepage-form input{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 3px;
+}
+
+#homepage-submit-btn {
+    margin: 0px auto 0px auto;
+    width: 25%;
+    padding: 3px;
+    display: block;
+    text-align: center;
+    background-color: #383838;
+    color: white;
+    border: 2px #21201f outset;
+    border-radius: 10px;
+}
+
+#homepage-form-message {
+    padding-top: 20px;
+}
 /* FOOTER STYLING */
 #footer {
     text-align: center;

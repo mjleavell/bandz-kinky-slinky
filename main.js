@@ -277,13 +277,14 @@ function lastDayOfMonth() {
 }
 
 const validateHomepageForm = () => {
-    let nameInput = document.getElementById('form-name').value;
-    let emailInput = document.getElementById('form-email').value;
     let button = document.getElementById('homepage-submit-btn');
     let outputFormString = "";
     button.addEventListener('click', (event) => {
+        let nameInput = document.getElementById('form-name').value;
+        let emailInput = document.getElementById('form-email').value;
+        console.log(nameInput, emailInput);
         if (nameInput !== "" && emailInput !== "") {
-            outputFormString = `Thank you for being a Kinky Slinky Fan.`
+            outputFormString = `Thank you for being a Kinky Slinky fan.`
         }else if (nameInput !== "" && emailInput === "") {
             outputFormString = `Please enter your email.`
         }else if (nameInput === "" && emailInput !== ""){
@@ -296,15 +297,14 @@ const validateHomepageForm = () => {
     }
 )};
 
-
 // CALL FUNCTIONS HERE
 buttonsHover();
-firstDayOfMonth();
-lastDayOfMonth();
-eventLister('April');
-eventLister('May');
-eventLister('June');
-monthCardSelector();
-dateCardSelector();
-calendarAtPageLoad();
+// firstDayOfMonth();
+// lastDayOfMonth();
+// eventLister('April');
+// eventLister('May');
+// eventLister('June');
+// monthCardSelector();
+// dateCardSelector();
+// calendarAtPageLoad();
 validateHomepageForm();

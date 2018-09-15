@@ -1,3 +1,7 @@
+const printToDom = (stringToPrint, divId) => {
+    document.getElementById(divId).innerHTML = stringToPrint;
+}
+
 function buttonsHover() {
     let buttons = [...document.getElementsByTagName('button')];
     buttons.forEach(function(el) {

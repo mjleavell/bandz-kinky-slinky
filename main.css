@@ -94,6 +94,13 @@ nav {
     border: 4px #21201f outset;
 }
 
+#homepage-form {
+    color:white;
+    background-color: #383838;
+    margin: 40px;
+    padding: 20px;
+}
+
 /* FOOTER STYLING */
 #footer {
     text-align: center;

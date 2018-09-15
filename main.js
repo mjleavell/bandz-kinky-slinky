@@ -16,31 +16,35 @@ function buttonsHover() {
     });
 }
 
-buttonsHover();
 
-const displayForm = () => {
-    let newString = "";
-    for (let i = 0; i < length; i++) {
+// const displayForm = () => {
+//     let newString = "";
+//     for (let i = 0; i < length; i++) {
 
-    }
-    printToDom(newString, 'homepage-form');
-}
+//     }
+//     printToDom(newString, 'homepage-form');
+// }
 
 const validateHomepageForm = () => {
-    let nameInput = document.getElementById('form-name');
-    let emailInput = document.getElementById('form-email');
+    let nameInput = document.getElementById('form-name').value;
+    let emailInput = document.getElementById('form-email').value;
     let button = document.getElementById('homepage-submit-btn');
     let outputFormString = "";
-    button.addEventListener('click', e => {
-        if (nameInput === null && emailInput === null) {
-            outputFormString = `Please enter your name and email.`
-        } else if (nameInput === null && emailInput === "") {
-            outputFormString = `Please enter your name.`;
-        } else if (nameInput === '' && emailInput === null) {
+    button.addEventListener('click', (event) => {
+        if (nameInput !== "" && emailInput !== "") {
+            outputFormString = `Thank you for being a Kinky Slinky Fan.`
+        }else if (nameInput !== "" && emailInput === "") {
             outputFormString = `Please enter your email.`
-        } else {
-            outputFormString = `Thank you for being a Kinky Slinky fan!`
+        }else if (nameInput === "" && emailInput !== ""){
+            outputFormString = `Please enter your name.`
+        }else {
+            outputFormString = `Please enter your name and email.`
         }
         printToDom(outputFormString, 'homepage-form-message');
+        event.preventDefault();
     }
-)}
+)};
+
+// CALL FUNCTIONS HERE
+buttonsHover();
+validateHomepageForm();

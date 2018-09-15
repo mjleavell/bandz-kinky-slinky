@@ -19,5 +19,8 @@ function buttonsHover() {
 buttonsHover();
 
 const mailFormMessage = () => {
-    let button = document.getElementById();
+    let button = document.getElementById('homepage-submit-btn');
+    button.addEventListener('click', e => {
+        
+    })
 }

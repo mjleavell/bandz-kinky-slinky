@@ -182,21 +182,32 @@ function monthCardSelector() {
         }
         let dateHeader = 0;
         let dateMonthBefore = 0;
+        let dateMonthAfter = 0;
         date = year[monthObject[menuSelect]].firstDay;
-        for(let i = 0; i < year[monthSelect].month; i++) {
+        for(let i = 0; i <= 37; i++) {
             if(dateMonthBefore < year[monthObject[menuSelect]].firstDay) {
                 dateCard = `<h4 class='dateCardHeader'>${dateMonthBefore+year[(monthObject[menuSelect]-1)].month-year[(monthObject[menuSelect]-1)].lastDay}</h4>`;
                 dateMonthBefore++;
                 let dateString = ''+dateMonthBefore;
                 printToDom(dateCard, 'dateDiv'+dateString); 
             }
-            else {
+            else if(date <= (year[monthSelect].month + year[monthObject[menuSelect]].firstDay)) {
                 date++;
                 dateHeader++;
                 dateCard = `<h4 class='dateCardHeader'>${dateHeader}</h4>`;
                 let dateString = ''+date;
                 printToDom(dateCard, 'dateDiv'+dateString);            
         }
+            else {
+                let daysToAdd = year[(monthObject[menuSelect]-1)].lastDay;
+                if(daysToAdd === 6) {
+                    daysToAdd = -1;
+                }
+                dateMonthAfter++;
+                dateCard = `<h4 class='dateCardHeader'>${dateMonthAfter}</h4>`;
+                let dateString = ''+(dateMonthAfter+daysToAdd+year[monthObject[menuSelect]].month+1);
+                printToDom(dateCard, 'dateDiv'+dateString);
+            }
     }
 })
 }
@@ -249,8 +260,8 @@ function firstDayOfMonth() {
         }
         else {            
             first = first + year[(i-1)].month - 28;
-            if(first === 7) {
-                first = 0;
+            if(first > 6) {
+                first = first - 7;
             }
             year[i].firstDay = first;
         }

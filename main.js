@@ -10,25 +10,25 @@ album: [
             name:"Evolution",
             image:"./images/Evolution.jpg",
             release:"10/19/2018",
-            songs:`${evolutionsong}`
+            songs:evolutionsong
     },
     {
         name:"Dethalbum III",
         image:"./images/DethalbumIII.jpg",
         release:"10/16/2012",
-        songs:`${dethalbum3song}`
+        songs:dethalbum3song
     },
     {
         name:"Asylum",
         image:"./images/asylum.jpg",
         release:"8/31/2010",
-        songs:`${asylumsong}`
+        songs:asylumsong
     },
     {
         name:"Dethalbum II",
         image:"./images/dethalbumII.jpg",
         release:"9/29/2009",
-        songs:`${dethalbum2song}`
+        songs:dethalbum2song
     },
     {
         name:"Dethalbum",
@@ -45,32 +45,18 @@ const printToDom = (stringToPrint, divId) => {
     document.getElementById(divId).innerHTML = stringToPrint;
 }
 
-const albumspageprint = () => {
-    const newString = `<p>${albumspage.album}</p>`
-    printToDom(newString,'albumscard')
-}
 
 const albumspageprintbilder = () => {
     let newString = '';
     for(let i = 0; i < albumspage.album.length; i++) {
-        newString +=``
-    }
-}
-
-const statementsStringBuilder = () => {
-    let newString = '';                               
-    for(let i = 0; i < elizabethSanger.statements.length; i++) {
-        newString +=`<div class="statement">`;
-        newString +=    `<h4>${elizabethSanger.statements[i].category}: ${elizabethSanger.statements[i].statement}</h4>`;
-        newString +=`</div>`;
-    }
-    printToDom(newString, 'statements');
+        newString +=`<div class="page">`;
+        newString +=`<img src="${albumspage.album[i].image}" alt="${albumspage.album[i].name}">`
+        newString +=`<h3>${albumspage.album[i].name}:</h3>`
+        newString +=`<h4>${albumspage.album[i].release}:</h4>`
+        newString += `<p>${albumspage.album[i].songs}:</p>`
+        newString +=`</div>`
+    };
+    printToDom(newString, 'albumscard');
 };
 
-
-
-
-
-
-
-albumspageprint()
+albumspageprintbilder();

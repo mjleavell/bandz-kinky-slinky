@@ -1,3 +1,130 @@
+body {
+    /* background-color: #5f605d; */
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    background-image: url(./images/brickbackground.jpg);
+    background-attachment: fixed;
+}
+    
+ h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* NAVBAR STYLING */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 2px black solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #21201f;
+    height: 50px;
+    z-index: 5000;
+}
+
+#navbar {
+    list-style-type: none;
+    padding-right: 10px; 
+    margin-top: auto; 
+    margin-bottom: auto;
+}
+
+#navbar li {
+    display: inline;
+    color: white;
+}
+
+#homeNav {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+#band-membersNav, #scheduleNav, #homeNav, #albumsNav {
+    background-color: #21201f;
+    border: 2px #21201f outset;
+    border-radius: 4px;
+    color: white;
+}
+
+#homeAnchor {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+/* HOMEPAGE STYLING*/
+.wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.homepage h1{
+    margin-top: 10%;
+}
+
+#homepage-art {
+    border: 4px #21201f outset;
+    margin: 5%;
+}
+
+#homepage-art img {
+    display: block;
+    align-content: center;
+    width: 100%;
+}
+
+#homepage-videos {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#homepage-videos iframe {
+    margin: 10px 25px 50px 25px;
+    border: 4px #21201f outset;
+}
+
+/* FOOTER STYLING */
+#footer {
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    background-color: #21201f;
+    padding-top: 1rem;
+}
+
+#footer-icons p {
+    margin: 5px 0px 5px 0px;
+    font-size: 20px;
+}
+
+#footer-icons img {
+    height: 20px;
+    padding: 5px;
+    margin: 8px;
+}
+
+#footer-copyright {
+    font-size: 12px;
+    padding-bottom: 8px;
+    margin-bottom: 0px;
+    margin-top: 8px;
+}
+
+/* BAND MEMBER PAGE STYLING */
 #picture-container{
     display:flex;
     justify-content: space-around;
@@ -6,4 +133,3 @@
 .mem-pic{
     width:300px;
     border-radius: 50%;
-}

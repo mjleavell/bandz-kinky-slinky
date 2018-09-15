@@ -1,3 +1,23 @@
+// PRINT TO DOM FUNCTION
+const printToDom = (stringToPrint, divId) => {
+    document.getElementById(divId).innerHTML = stringToPrint;
+}
+
+// NAVBAR FUNCTION
+function buttonsHover() {
+    let buttons = [...document.getElementsByTagName('button')];
+    buttons.forEach(function(el) {
+        el.addEventListener('mouseover', function() {
+            let btnColor = event.target; 
+            btnColor.setAttribute('style', 'background-color:#ef6817');
+        });
+        el.addEventListener('mouseout', function() {
+            let btnColor = event.target; 
+            btnColor.setAttribute('style', 'background-color:#21201f');
+        });
+    });
+}
+
 
 let mem1 = {name:'Ben Rector',instrument:'Guitar',favoriteSong:'Born in the USA',picture:'https://www.billboard.com/files/media/Ben-Rector-bb21-hot-100-pr-2016-billboard-1548.jpg'};
 
@@ -33,3 +53,6 @@ nfl();
 
 // var mem1Info = document.getElementById('pic1');
 // mem1Info.addEventListener('click',)
+
+// CALL FUNCTIONS 
+buttonsHover();

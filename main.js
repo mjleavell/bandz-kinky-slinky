@@ -92,33 +92,33 @@ const events = {
 };
 
 let year = [
-    {month: 31, firstDay: 0},
-    {month: 28, firstDay: 0},
-    {month: 31, firstDay: 0},
-    {month: 30, firstDay: 0},
-    {month: 31, firstDay: 0},
-    {month: 30, firstDay: 0},
-    {month: 31, firstDay: 0},
-    {month: 31, firstDay: 0},
-    {month: 30, firstDay: 0},
-    {month: 31, firstDay: 0},
-    {month: 30, firstDay: 0},
-    {month: 31, firstDay: 0}
+    {month: 31, firstDay: 0, lastDay: 0},
+    {month: 28, firstDay: 0, lastDay: 0},
+    {month: 31, firstDay: 0, lastDay: 0},
+    {month: 30, firstDay: 0, lastDay: 0},
+    {month: 31, firstDay: 0, lastDay: 0},
+    {month: 30, firstDay: 0, lastDay: 0},
+    {month: 31, firstDay: 0, lastDay: 0},
+    {month: 31, firstDay: 0, lastDay: 0},
+    {month: 30, firstDay: 0, lastDay: 0},
+    {month: 31, firstDay: 0, lastDay: 0},
+    {month: 30, firstDay: 0, lastDay: 0},
+    {month: 31, firstDay: 0, lastDay: 0}
 ]
 
 const monthObject = {
-    January: year[0],
-    February: year[1],
-    March: year[2],
-    April: year[3],
-    May: year[4],
-    June: year[5],
-    July: year[6],
-    August: year[7],
-    September: year[8],
-    October: year[9],
-    November: year[10],
-    December: year[11]
+    January: 0,
+    February: 1,
+    March: 2,
+    April: 3,
+    May: 4,
+    June: 5,
+    July: 6,
+    August: 7,
+    September: 8,
+    October: 9,
+    November: 10,
+    December: 11
 }
 
 const januaryFirstDay = 1;
@@ -170,9 +170,9 @@ function eventLister(month) {
 
 
 function monthCardSelector() {
-    document.getElementById('calendarMenu').addEventListener('click', function() {
+    document.getElementById('calendarButton').addEventListener('click', function() {
         let menuSelect = document.getElementById('select').value;
-        let monthSelect = monthObject[menuSelect].month;
+        let monthSelect = monthObject[menuSelect];
         date = 0;
         for(let i = 0; i < 37; i++) {
             date++;
@@ -181,24 +181,36 @@ function monthCardSelector() {
             printToDom(dateCard, 'dateDiv'+dateString);            
         }
         let dateHeader = 0;
-        date = monthObject[menuSelect].firstDay;
-        for(let i = 0; i < monthSelect; i++) {
-            date++;
-            dateHeader++;
-            dateCard = `<h4 class='dateCardHeader'>${dateHeader}</h4>`;
-            let dateString = ''+date;
-            printToDom(dateCard, 'dateDiv'+dateString);            
+        let dateMonthBefore = 0;
+        date = year[monthObject[menuSelect]].firstDay;
+        for(let i = 0; i < year[monthSelect].month; i++) {
+            if(dateMonthBefore < year[monthObject[menuSelect]].firstDay) {
+                dateCard = `<h4 class='dateCardHeader'>${dateMonthBefore+year[(monthObject[menuSelect]-1)].month-year[(monthObject[menuSelect]-1)].lastDay}</h4>`;
+                dateMonthBefore++;
+                let dateString = ''+dateMonthBefore;
+                printToDom(dateCard, 'dateDiv'+dateString); 
+            }
+            else {
+                date++;
+                dateHeader++;
+                dateCard = `<h4 class='dateCardHeader'>${dateHeader}</h4>`;
+                let dateString = ''+date;
+                printToDom(dateCard, 'dateDiv'+dateString);            
         }
-    })
+    }
+})
 }
 
 function eventListerCalendar(month) {
-    let eventClass = '';
-    let dateFirst = monthObject[month].firstDay;
+    let dateFirst = year[monthObject[month]].firstDay;
+    let divArray = document.getElementsByClassName('dateClass');
+    for(let i = 0; i <divArray.length; i++) {
+        divArray.namedItem('dateDiv'+[(i+1)]).style.backgroundColor = '#383838';
+    }
     for(let i = 0; i < events[month].length; i++) {
         let dateString = '' + (parseInt(events[month][i].date) + dateFirst);
         let eventString = document.getElementById('dateDiv'+dateString).innerHTML;
-        eventString +=  `<div class=${eventClass}>`
+        eventString +=  `<div>`
         eventString +=      `<h3 class='jsEventsHeader'>${events[month][i].name}</h3>`
         eventString +=      `<p class='jsEventsPar'>Date: ${month} ${events[month][i].date}</p>`
         eventString +=      `<p class='jsEventsPar'>Location: ${events[month][i].venue}</p>`
@@ -206,11 +218,12 @@ function eventListerCalendar(month) {
         eventString +=      `<p class='jsEventsPar'>${events[month][i].description}</p>`
         eventString +=  `</div>`;
         printToDom(eventString, 'dateDiv'+dateString);
+        document.getElementById('dateDiv'+dateString).style.backgroundColor = '#ef6817';
     };    
 }
 
 function dateCardSelector() {
-    document.getElementById('calendarMenu').addEventListener('click', function() {
+    document.getElementById('calendarButton').addEventListener('click', function() {
         let menuSelect = document.getElementById('select').value;
         eventListerCalendar(menuSelect);
     })
@@ -244,8 +257,18 @@ function firstDayOfMonth() {
     }
 }
 
+function lastDayOfMonth() {
+    for(let i = 0; i <year.length; i++) {
+        year[i].lastDay = year[i].firstDay + year[i].month -29;
+        if(year[i].lastDay > 6) {
+            year[i].lastDay = year[i].lastDay - 7;
+        }
+    }
+}
+
 buttonsHover();
 firstDayOfMonth();
+lastDayOfMonth();
 eventLister('April');
 eventLister('May');
 eventLister('June');

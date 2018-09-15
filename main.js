@@ -1,92 +1,80 @@
 const events = {
     April: [
         {
-            name: 'Event 1',
+            name: 'Live in a Dive',
             date: '6',
-            venue: 'Venue 1',
+            venue: 'The Wrecking Ball',
             time: '9:30',
-            description: 'Description 1'
         },
         {
             name: 'Event 2',
             date: '14',
-            venue: 'Venue 2',
+            venue: 'Rum, Lola, Rum',
             time: '10:30',
-            description: 'Description 2'
         },
         {
             name: 'Event 3',
             date: '26',
-            venue: 'Venue 3',
+            venue: 'The Bier Garth',
             time: '8:00',
-            description: 'Description 3'
         },
         {
             name: 'Event 11',
             date: '29',
-            venue: 'Venue 11',
+            venue: 'Good Intentions',
             time: '8:30',
-            description: 'Description 11'
         }
     ],
     May: [
         {
             name: 'Event 4',
             date: '9',
-            venue: 'Venue 4',
+            venue: 'Superstar Ampitheatre',
             time: '9:00',
-            description: 'Description 4'
         },
         {
             name: 'Event 5',
             date: '15',
-            venue: 'Venue 5',
+            venue: 'Smoothie King Center',
             time: '10:00',
-            description: 'Description 5'
         },
         {
             name: 'Event 6',
             date: '16',
-            venue: 'Venue 6',
+            venue: 'Ryman Auditorium',
             time: '9:30',
-            description: 'Description 6'
         },
         {
             name: 'Event 7',
             date: '28',
-            venue: 'Venue 7',
+            venue: 'The Great Melting Pit',
             time: '8:30',
-            description: 'Description 7'
         }
     ],
     June: [
         {
             name: 'Event 8',
             date: '5',
-            venue: 'Venue 8',
+            venue: 'South-Southeast of Eden',
             time: '8:00',
-            description: 'Description 8'
         },
         {
             name: 'Event 9',
             date: '12',
-            venue: 'Venue 9',
+            venue: 'The Power Chord',
             time: '9:00',
-            description: 'Description 9'
         },
         {
             name: 'Event 10',
             date: '20',
-            venue: 'Venue 10',
+            venue: "The Cat's Cradle",
             time: '10:00',
-            description: 'Description 10'
         },
         {
             name: 'Event 12',
             date: '22',
-            venue: 'Venue 12',
+            venue: 'Rock and a Bar Place',
             time: '12:00',
-            description: 'Description 12'
         }
     ]
 };
@@ -162,7 +150,6 @@ function eventLister(month) {
         eventString +=      `<p class='jsEventsPar'>Date: ${month} ${events[month][i].date}</p>`
         eventString +=      `<p class='jsEventsPar'>Location: ${events[month][i].venue}</p>`
         eventString +=      `<p class='jsEventsPar'>ShowTime: ${events[month][i].time}</p>`
-        eventString +=      `<p class='jsEventsPar'>${events[month][i].description}</p>`
         eventString +=  `</div>`;
     };
     printToDom(eventString, 'events'+month+'Div');
@@ -222,11 +209,10 @@ function eventListerCalendar(month) {
         let dateString = '' + (parseInt(events[month][i].date) + dateFirst);
         let eventString = document.getElementById('dateDiv'+dateString).innerHTML;
         eventString +=  `<div>`
-        eventString +=      `<h3 class='jsEventsHeader'>${events[month][i].name}</h3>`
-        eventString +=      `<p class='jsEventsPar'>Date: ${month} ${events[month][i].date}</p>`
-        eventString +=      `<p class='jsEventsPar'>Location: ${events[month][i].venue}</p>`
-        eventString +=      `<p class='jsEventsPar'>ShowTime: ${events[month][i].time}</p>`
-        eventString +=      `<p class='jsEventsPar'>${events[month][i].description}</p>`
+        eventString +=      `<h3 class='jsCalendarHeader'>${events[month][i].name}</h3>`
+        eventString +=      `<p class='jsCalendarPar'>Date: ${month} ${events[month][i].date}</p>`
+        eventString +=      `<p class='jsCalendarPar'>Location: ${events[month][i].venue}</p>`
+        eventString +=      `<p class='jsCalendarPar'>ShowTime: ${events[month][i].time}</p>`
         eventString +=  `</div>`;
         printToDom(eventString, 'dateDiv'+dateString);
         document.getElementById('dateDiv'+dateString).style.backgroundColor = '#ef6817';
@@ -277,12 +263,18 @@ function lastDayOfMonth() {
     }
 }
 
+function schedulePage() {
+    if(window.location.pathname === '/html/schedule.html') {
+        firstDayOfMonth();
+        lastDayOfMonth();
+        eventLister('April');
+        eventLister('May');
+        eventLister('June');
+        monthCardSelector();
+        dateCardSelector();
+        calendarAtPageLoad();
+    }
+}
+
+schedulePage();
 buttonsHover();
-firstDayOfMonth();
-lastDayOfMonth();
-eventLister('April');
-eventLister('May');
-eventLister('June');
-monthCardSelector();
-dateCardSelector();
-calendarAtPageLoad();

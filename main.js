@@ -120,13 +120,13 @@ const printToDom = (stringToPrint, divId) => {
 
 function buttonsHover() {
     let buttons = [...document.getElementsByTagName('button')];
-    buttons.forEach(function(el) {
-        el.addEventListener('mouseover', function() {
-            let btnColor = event.target; 
+    buttons.forEach(function (el) {
+        el.addEventListener('mouseover', function () {
+            let btnColor = event.target;
             btnColor.setAttribute('style', 'background-color:#ef6817');
         });
-        el.addEventListener('mouseout', function() {
-            let btnColor = event.target; 
+        el.addEventListener('mouseout', function () {
+            let btnColor = event.target;
             btnColor.setAttribute('style', 'background-color:#21201f');
         });
     });
@@ -154,7 +154,6 @@ function eventLister(month) {
     };
     printToDom(eventString, 'events'+month+'Div');
 }
-
 
 function monthCardSelector() {
     document.getElementById('calendarButton').addEventListener('click', function() {
@@ -263,6 +262,27 @@ function lastDayOfMonth() {
     }
 }
 
+const validateHomepageForm = () => {
+    let button = document.getElementById('homepage-submit-btn');
+    let outputFormString = "";
+    button.addEventListener('click', (event) => {
+        let nameInput = document.getElementById('form-name').value;
+        let emailInput = document.getElementById('form-email').value;
+        console.log(nameInput, emailInput);
+        if (nameInput !== "" && emailInput !== "") {
+            outputFormString = `Thank you for being a Kinky Slinky fan.`
+        }else if (nameInput !== "" && emailInput === "") {
+            outputFormString = `Please enter your email.`
+        }else if (nameInput === "" && emailInput !== ""){
+            outputFormString = `Please enter your name.`
+        }else {
+            outputFormString = `Please enter your name and email.`
+        }
+        printToDom(outputFormString, 'homepage-form-message');
+        event.preventDefault();
+    }
+)};
+
 function schedulePage() {
     if(window.location.pathname === '/html/schedule.html') {
         firstDayOfMonth();
@@ -276,5 +296,13 @@ function schedulePage() {
     }
 }
 
-schedulePage();
+const homePage = () => {
+    if (window.location.pathname === '/index.html') {
+        validateHomepageForm();
+    }
+}
+
+// CALL FUNCTIONS HERE
 buttonsHover();
+homePage();
+schedulePage();

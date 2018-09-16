@@ -297,14 +297,26 @@ const validateHomepageForm = () => {
     }
 )};
 
+function schedulePage() {
+    if(window.location.pathname === '/html/schedule.html') {
+        firstDayOfMonth();
+        lastDayOfMonth();
+        eventLister('April');
+        eventLister('May');
+        eventLister('June');
+        monthCardSelector();
+        dateCardSelector();
+        calendarAtPageLoad();
+    }
+}
+
+const homePage = () => {
+    if (window.location.pathname === './index.html') {
+        validateHomepageForm();
+    }
+}
+
 // CALL FUNCTIONS HERE
+schedulePage();
 buttonsHover();
-// firstDayOfMonth();
-// lastDayOfMonth();
-// eventLister('April');
-// eventLister('May');
-// eventLister('June');
-// monthCardSelector();
-// dateCardSelector();
-// calendarAtPageLoad();
-validateHomepageForm();
+homePage();

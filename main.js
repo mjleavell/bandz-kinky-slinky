@@ -47,8 +47,7 @@ album: [
 
 const printToDom = (stringToPrint, divId) => {
     document.getElementById(divId).innerHTML = stringToPrint;
-}
-
+};
 
 const albumspageprintbilder = () => {
     let newString = '';

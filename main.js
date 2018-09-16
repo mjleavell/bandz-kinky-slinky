@@ -274,7 +274,7 @@ let news = [
     {
         newsImage:'./images/911soundofsilence.png',
         newsDate:'09/11/2018',
-        newsTitle:"'Sounds of Silence' 9/11 Tribute Will Tug on Your Heartstrings",
+        newsTitle:"'Sound of Silence' 9/11 Tribute",
         newsUrl:'https://waaf.radio.com/blogs/anthony-capobianco/september-11th-tribute-disturbeds-sounds-silence-will-bring-you-tears'
     },
     {
@@ -285,19 +285,16 @@ let news = [
     }
 ]
         
-
 const displayHomepageNews = () => {
     let newString = '';
     for (let i = 0; i < news.length; i++) {
-        newString += `<div class="homepage-news">`
-        newString +=    `<img src="${news.newsImage}" alt="">`
-        newString +=    `<p>${news.newsDate}</p>`
-        newString +=    `<a href="${news.newsUrl}"><h3>${news.newsTitle}</h3></a>`
-        newString += `</div>`
-    } printToDom(newString, 'latestNews')
+        newString += `<div class="homepage-news-article">`;
+        newString +=    `<img class="homepage-news-img" src="${news[i].newsImage}" alt="">`;
+        newString +=    `<p>${news[i].newsDate}</p>`;
+        newString +=    `<a href="${news[i].newsUrl}" target="_blank"><h3>${news[i].newsTitle}</h3></a>`;
+        newString += `</div>`;
+    } printToDom(newString, 'homepage-news');
 }
-
-
 
 function schedulePage() {
     if(window.location.pathname === '/html/schedule.html') {
@@ -311,6 +308,13 @@ function schedulePage() {
         calendarAtPageLoad();
     }
 }
+const homePage = () => {
+   if (window.location.pathname === '/index.html') {
+       displayHomepageNews();
+   }
+}
 
+// CALL FUNCTIONS HERE
 schedulePage();
 buttonsHover();
+homePage();

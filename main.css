@@ -207,7 +207,7 @@ nav {
     margin-bottom: 5px;
 }
 
-    /* HOMEPAGE STYLING*/
+ /* HOMEPAGE STYLING*/
 .wrapper {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -238,6 +238,43 @@ nav {
 #homepage-videos iframe {
     margin: 10px 25px 50px 25px;
     border: 4px #21201f outset;
+}
+
+#homepage-news {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+.homepage-news-article {
+    border: 2px #21201f outset;
+    background-color: rgb(56, 56, 56,0.85);
+    margin: 20px;
+    width: 25%;
+}
+
+.homepage-news-img {
+    width: 100%;
+    display: block;
+}
+
+.homepage-news-article h3{
+    margin: 2px;
+    padding: 3px 2px 3px 2px;
+}
+
+.homepage-news-article a{
+    color: white;
+    text-decoration: none;
+}
+
+.homepage-news-article a:hover{
+    color: #ef6817;
+}
+
+.homepage-news-article p{
+    color: white;
+    margin: 2px;
+    font-size: 12px;
 }
 
 /* FOOTER STYLING */

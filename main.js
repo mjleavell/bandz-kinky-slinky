@@ -263,6 +263,42 @@ function lastDayOfMonth() {
     }
 }
 
+
+let news = [
+    {
+        newsImage:'../images/soundofsilence.png',
+        newsDate:'09/12/2018',
+        newsTitle:"What made 'The Sound of Silence' different?",
+        newsUrl: 'https://www.ultimate-guitar.com/news/general_music_news/disturbed_what_made_the_sound_of_silence_so_different_from_other_cover_songs_we_recorded.html'
+    },
+    {
+        newsImage:'./images/911soundofsilence.png',
+        newsDate:'09/11/2018',
+        newsTitle:"'Sounds of Silence' 9/11 Tribute Will Tug on Your Heartstrings",
+        newsUrl:'https://waaf.radio.com/blogs/anthony-capobianco/september-11th-tribute-disturbeds-sounds-silence-will-bring-you-tears'
+    },
+    {
+        newsImage:'./images/Dethalbum.jpg',
+        newsDate:'04/18/2018',
+        newsTitle:"'Awaken' Hits Hot Rock Songs Chart",
+        newsUrl:'https://www.billboard.com/articles/columns/chart-beat/8317185/dethklok-awaken-hot-rock-songs-chart-batmetal-metalocalypse'
+    }
+]
+        
+
+const displayHomepageNews = () => {
+    let newString = '';
+    for (let i = 0; i < news.length; i++) {
+        newString += `<div class="homepage-news">`
+        newString +=    `<img src="${news.newsImage}" alt="">`
+        newString +=    `<p>${news.newsDate}</p>`
+        newString +=    `<a href="${news.newsUrl}"><h3>${news.newsTitle}</h3></a>`
+        newString += `</div>`
+    } printToDom(newString, 'latestNews')
+}
+
+
+
 function schedulePage() {
     if(window.location.pathname === '/html/schedule.html') {
         firstDayOfMonth();

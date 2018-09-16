@@ -44,36 +44,6 @@ album: [
 ]
 }
 
-
-const printToDom = (stringToPrint, divId) => {
-    document.getElementById(divId).innerHTML = stringToPrint;
-};
-
-const albumspageprintbilder = () => {
-    let newString = '';
-    for(let i = 0; i < albumspage.album.length; i++) {
-        newString +=`<div class="page">`;
-        newString +=`<div class="wraper">`;
-        newString +=`<div class="albImg">`
-        newString +=    `<a href="${albumspage.album.purchase}"><img id="ablumImg_${i}" src="${albumspage.album[i].image}" alt="${albumspage.album[i].name}"></a>`
-        newString +=    `<ol>`
-            for (let j = 0; j < albumspage.album[i].songs.length; j++){
-            newString +=    `<li>${albumspage.album[i].songs[j]}</li>`
-        }
-        newString +=`</ol>`
-        newString +=`</div>`
-        newString +=`<div class="albInfo">`
-        newString +=    `<h3>${albumspage.album[i].name}:</h3>`
-        newString +=    `<div class="albreleaseinfo">`
-        newString +=    `<h4>${albumspage.album[i].release}:</h4>`
-        newString +=    `</div>`
-        newString +=    `</div>`
-        newString +=`</div>`
-    };
-    printToDom(newString, 'albumscard');
-};
-albumspageprintbilder();
-
 const events = {
     April: [
         {
@@ -201,6 +171,34 @@ const januaryFirstDay = 1;
 let first = -1;
 let date = 0;
 let dateCard = '';
+
+const printToDom = (stringToPrint, divId) => {
+    document.getElementById(divId).innerHTML = stringToPrint;
+};
+
+const albumspageprintbilder = () => {
+    let newString = '';
+    for(let i = 0; i < albumspage.album.length; i++) {
+        newString +=`<div class="page">`;
+        newString +=`<div class="wraper">`;
+        newString +=`<div class="albImg">`
+        newString +=    `<a href="${albumspage.album.purchase}"><img id="ablumImg_${i}" src="${albumspage.album[i].image}" alt="${albumspage.album[i].name}"></a>`
+        newString +=    `<ol>`
+            for (let j = 0; j < albumspage.album[i].songs.length; j++){
+            newString +=    `<li>${albumspage.album[i].songs[j]}</li>`
+        }
+        newString +=`</ol>`
+        newString +=`</div>`
+        newString +=`<div class="albInfo">`
+        newString +=    `<h3>${albumspage.album[i].name}:</h3>`
+        newString +=    `<div class="albreleaseinfo">`
+        newString +=    `<h4>${albumspage.album[i].release}:</h4>`
+        newString +=    `</div>`
+        newString +=    `</div>`
+        newString +=`</div>`
+    };
+    printToDom(newString, 'albumscard');
+};
 
 function buttonsHover() {
     let buttons = [...document.getElementsByTagName('button')];
@@ -349,12 +347,26 @@ function lastDayOfMonth() {
     }
 }
 
+function schedulePage() {
+    if(window.location.pathname === '/html/schedule.html') {
+        firstDayOfMonth();
+        lastDayOfMonth();
+        eventLister('April');
+        eventLister('May');
+        eventLister('June');
+        monthCardSelector();
+        dateCardSelector();
+        calendarAtPageLoad();
+    }
+}
+
+function albumsPageFnc() {
+    if(window.location.pathname === '/html/albums.html')
+    albumspageprintbilder();
+}
+
 buttonsHover();
-firstDayOfMonth();
-lastDayOfMonth();
-eventLister('April');
-eventLister('May');
-eventLister('June');
-monthCardSelector();
-dateCardSelector();
-calendarAtPageLoad();
+schedulePage();
+albumsPageFnc();
+
+

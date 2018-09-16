@@ -224,13 +224,12 @@ nav {
 #homepage-videos iframe {
     margin: 10px 25px 50px 25px;
     border: 4px #21201f outset;
->>>>>>> master
 }
 
 /* FOOTER STYLING */
 #footer {
     text-align: center;
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
     color: white;
@@ -255,3 +254,27 @@ nav {
     margin-bottom: 0px;
     margin-top: 8px;
 }
+
+/* albums page */
+.page{
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 100px 
+
+ }
+ .albImg{
+     display: flex;
+ }
+.albImg > *{
+    width: 25vw;
+}
+
+.wrapper{
+    align-self: self-start;
+}
+/* .albreleaseinfo{
+    margin-bottom: 100px
+} */

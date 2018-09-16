@@ -114,6 +114,16 @@ nav {
     line-height: 3;
 }
 
+.jsCalendarHeader {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.jsCalendarPar {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
 #dates {
     display: flex;
     flex-flow: row wrap;
@@ -124,7 +134,6 @@ nav {
     width: 13%;
     border: 1px black solid;
     height: 150px;
-    line-height: 0.3;
     padding-left: 5px;
     background-color: #383838;
 }
@@ -187,11 +196,15 @@ nav {
     width: 13%;
     border: 1px black solid;
     height: 150px;
-    line-height: 0.3;
     padding-left: 5px;
 }
 
-    /* HOMEPAGE STYLING*/
+.dateCardHeader {
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+/* HOMEPAGE STYLING*/
 .wrapper {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -231,7 +244,6 @@ nav {
     padding: 20px 50px 20px 50px;
     margin: 20px auto 20px auto;
     border: 2px #21201f outset;
-    border-radius: 10px;
 }
 
 #homepage-form h3 {
@@ -255,7 +267,7 @@ nav {
 #homepage-submit-btn {
     margin: 0px auto 0px auto;
     width: 25%;
-    padding: 3px;
+    padding: 4px;
     display: block;
     text-align: center;
     background-color: #383838;
@@ -267,6 +279,7 @@ nav {
 #homepage-form-message {
     padding-top: 20px;
 }
+
 /* FOOTER STYLING */
 #footer {
     text-align: center;

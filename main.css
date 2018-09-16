@@ -226,7 +226,7 @@ nav {
 }
 
 #homepage-form {
-    background-color: rgb(114,114,113,0.9);
+    background-color: rgb(114,114,113,0.95);
     width: 40%;
     padding: 20px 50px 20px 50px;
     margin: 20px auto 20px auto;
@@ -239,6 +239,7 @@ nav {
     margin-bottom: 7px;
     text-align: center;
     color: #21201f;
+    font-size: 24px;
 }
 
 #homepage-form div {

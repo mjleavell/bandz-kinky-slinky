@@ -311,7 +311,7 @@ function schedulePage() {
 }
 
 const homePage = () => {
-    if (window.location.pathname === './index.html') {
+    if (window.location.pathname === '/index.html') {
         validateHomepageForm();
     }
 }

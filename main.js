@@ -29,7 +29,7 @@ const members = [mem1,mem2,mem3,mem4];
 
 const printToDom =(stringToPrint,divId) =>{
     const selectedDiv =document.getElementById(divId);
-    selectedDiv.innerHTML += stringToPrint;
+    selectedDiv.innerHTML = stringToPrint;
 };
 
 
@@ -43,14 +43,17 @@ const getMemberById = (id) =>{
 
 
 }
+
 const needHelp = (event) => {
     if (event.target.tagName !== 'IMG'){
         return
     }
     let member = getMemberById(event.target.parentElement.id) 
     let bandInfo = "";
-    bandInfo += `<p>${member['name']}</p>`
-    bandInfo += `<p>${member['instrument']}</p>`;
+    bandInfo += `<div>`
+    bandInfo +=     `<p>${member['name']}</p>`
+    bandInfo +=     `<p>${member['instrument']}</p>`
+    bandInfo += `</div>`;
    printToDom(bandInfo,'test');
 }
 
@@ -60,25 +63,14 @@ const needHelp = (event) => {
 document.getElementById('picture-container').addEventListener('click',needHelp)
 
 const nfl = () =>{
+    let imageString = '';
     for (let i=0;i<members.length;i++){
-        let imageString = `<div id="${members[i].id}">`;
+        imageString += `<div id="${members[i].id}">`;
         imageString += `<img class="mem-pic" src="${members[i].picture}" alt="${members[i].name}">`
         imageString += `</div>`
-        printToDom(imageString,'picture-container');
     }; 
+    printToDom(imageString,'picture-container');
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 // CALL FUNCTIONS 
 buttonsHover();

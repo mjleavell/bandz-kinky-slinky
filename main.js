@@ -190,9 +190,9 @@ const albumspageprintbilder = () => {
         newString +=`</ol>`
         newString +=`</div>`
         newString +=`<div class="albInfo">`
-        newString +=    `<h3>${albumspage.album[i].name}:</h3>`
+        newString +=    `<h3>Album Name: ${albumspage.album[i].name}:</h3>`
         newString +=    `<div class="albreleaseinfo">`
-        newString +=    `<h4>${albumspage.album[i].release}:</h4>`
+        newString +=    `<h4>Release Date: ${albumspage.album[i].release}:</h4>`
         newString +=    `</div>`
         newString +=    `</div>`
         newString +=`</div>`

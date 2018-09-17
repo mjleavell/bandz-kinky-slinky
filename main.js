@@ -7,19 +7,19 @@ const events = {
             time: '9:30',
         },
         {
-            name: 'Event 2',
+            name: 'Lolapachellaroo',
             date: '14',
             venue: 'Rum, Lola, Rum',
             time: '10:30',
         },
         {
-            name: 'Event 3',
+            name: 'American Nevernudes Charity Show',
             date: '26',
             venue: 'The Bier Garth',
             time: '8:00',
         },
         {
-            name: 'Event 11',
+            name: 'The Dude Wheres My Chord Tour',
             date: '29',
             venue: 'Good Intentions',
             time: '8:30',
@@ -27,25 +27,25 @@ const events = {
     ],
     May: [
         {
-            name: 'Event 4',
+            name: 'Opening for the Nashville Silent Opera',
             date: '9',
             venue: 'Superstar Ampitheatre',
             time: '9:00',
         },
         {
-            name: 'Event 5',
+            name: 'The Placeholder Tour',
             date: '15',
             venue: 'Smoothie King Center',
             time: '10:00',
         },
         {
-            name: 'Event 6',
+            name: 'The Alright Ole Opry',
             date: '16',
             venue: 'Ryman Auditorium',
             time: '9:30',
         },
         {
-            name: 'Event 7',
+            name: 'Headlining with Durants on a Plane',
             date: '28',
             venue: 'The Great Melting Pit',
             time: '8:30',
@@ -53,25 +53,25 @@ const events = {
     ],
     June: [
         {
-            name: 'Event 8',
+            name: 'Announcement of the Album Release Announcement Show, Show',
             date: '5',
             venue: 'South-Southeast of Eden',
             time: '8:00',
         },
         {
-            name: 'Event 9',
+            name: 'Opening for Tedious Data Entry',
             date: '12',
             venue: 'The Power Chord',
             time: '9:00',
         },
         {
-            name: 'Event 10',
+            name: 'The Ressurection Tour, featuring TuPac',
             date: '20',
             venue: "The Cat's Cradle",
             time: '10:00',
         },
         {
-            name: 'Event 12',
+            name: 'The Pre-Emptive Farewell Show',
             date: '22',
             venue: 'Rock and a Bar Place',
             time: '12:00',

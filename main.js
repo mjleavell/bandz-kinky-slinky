@@ -55,7 +55,7 @@ const albumspageprintbilder = () => {
         newString +=`<div class="page">`;
         newString +=`<div class="wraper">`;
         newString +=`<div class="albImg">`
-        newString +=    `<a href="${albumspage.album.purchase}"><img id="ablumImg_${i}" src="${albumspage.album[i].image}" alt="${albumspage.album[i].name}"></a>`
+        newString +=    `<a href="${albumspage.album[i].purchase}"><img id="ablumImg_${i}" src="${albumspage.album[i].image}" alt="${albumspage.album[i].name}"></a>`
         newString +=    `<ol>`
             for (let j = 0; j < albumspage.album[i].songs.length; j++){
             newString +=    `<li>${albumspage.album[i].songs[j]}</li>`

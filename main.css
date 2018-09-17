@@ -4,9 +4,9 @@ body {
     padding: 0px;
     background-image: url(./images/brickbackground.jpg);
     background-attachment: fixed;
-    }
+}
     
- h1 {
+h1 {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 50px;
     color: white;
@@ -350,19 +350,45 @@ nav {
     margin-top: 8px;
 }
 
-/* albums page */
+/* BAND MEMBER PAGE STYLING */
+#picture-container{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:45px;
+}
+
+.mem-pic{
+    width:250px;
+    border-radius: 50%;
+}
+
+#bandPage{
+    text-align: center;
+    padding:10px;
+}
+
+#test{
+    background-color: gainsboro;
+    width: 50%;
+    margin: 0 auto 0 auto;
+    text-align: center;
+
+    /* albums page */
+
 .page{
     color: white;
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-top: 100px;
-    margin-bottom: 100px 
+    margin-bottom: 100px;
+}
 
- }
- .albImg{
+.albImg{
      display: flex;
- }
+}
+
 .albImg > *{
     width: 25vw;
 }

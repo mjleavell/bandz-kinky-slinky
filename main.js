@@ -47,92 +47,80 @@ album: [
 const events = {
     April: [
         {
-            name: 'Event 1',
+            name: 'Live in a Dive',
             date: '6',
-            venue: 'Venue 1',
+            venue: 'The Wrecking Ball',
             time: '9:30',
-            description: 'Description 1'
         },
         {
             name: 'Event 2',
             date: '14',
-            venue: 'Venue 2',
+            venue: 'Rum, Lola, Rum',
             time: '10:30',
-            description: 'Description 2'
         },
         {
             name: 'Event 3',
             date: '26',
-            venue: 'Venue 3',
+            venue: 'The Bier Garth',
             time: '8:00',
-            description: 'Description 3'
         },
         {
             name: 'Event 11',
             date: '29',
-            venue: 'Venue 11',
+            venue: 'Good Intentions',
             time: '8:30',
-            description: 'Description 11'
         }
     ],
     May: [
         {
             name: 'Event 4',
             date: '9',
-            venue: 'Venue 4',
+            venue: 'Superstar Ampitheatre',
             time: '9:00',
-            description: 'Description 4'
         },
         {
             name: 'Event 5',
             date: '15',
-            venue: 'Venue 5',
+            venue: 'Smoothie King Center',
             time: '10:00',
-            description: 'Description 5'
         },
         {
             name: 'Event 6',
             date: '16',
-            venue: 'Venue 6',
+            venue: 'Ryman Auditorium',
             time: '9:30',
-            description: 'Description 6'
         },
         {
             name: 'Event 7',
             date: '28',
-            venue: 'Venue 7',
+            venue: 'The Great Melting Pit',
             time: '8:30',
-            description: 'Description 7'
         }
     ],
     June: [
         {
             name: 'Event 8',
             date: '5',
-            venue: 'Venue 8',
+            venue: 'South-Southeast of Eden',
             time: '8:00',
-            description: 'Description 8'
         },
         {
             name: 'Event 9',
             date: '12',
-            venue: 'Venue 9',
+            venue: 'The Power Chord',
             time: '9:00',
-            description: 'Description 9'
         },
         {
             name: 'Event 10',
             date: '20',
-            venue: 'Venue 10',
+            venue: "The Cat's Cradle",
             time: '10:00',
-            description: 'Description 10'
         },
         {
             name: 'Event 12',
             date: '22',
-            venue: 'Venue 12',
+            venue: 'Rock and a Bar Place',
             time: '12:00',
-            description: 'Description 12'
         }
     ]
 };
@@ -172,6 +160,27 @@ let first = -1;
 let date = 0;
 let dateCard = '';
 
+let news = [
+    {
+        newsImage:'../images/soundofsilence.png',
+        newsDate:'09/12/2018',
+        newsTitle:"What made 'The Sound of Silence' different?",
+        newsUrl: 'https://www.ultimate-guitar.com/news/general_music_news/disturbed_what_made_the_sound_of_silence_so_different_from_other_cover_songs_we_recorded.html'
+    },
+    {
+        newsImage:'./images/911soundofsilence.png',
+        newsDate:'09/11/2018',
+        newsTitle:"'Sound of Silence' 9/11 Tribute",
+        newsUrl:'https://waaf.radio.com/blogs/anthony-capobianco/september-11th-tribute-disturbeds-sounds-silence-will-bring-you-tears'
+    },
+    {
+        newsImage:'./images/Dethalbum.jpg',
+        newsDate:'04/18/2018',
+        newsTitle:"'Awaken' Hits Hot Rock Songs Chart",
+        newsUrl:'https://www.billboard.com/articles/columns/chart-beat/8317185/dethklok-awaken-hot-rock-songs-chart-batmetal-metalocalypse'
+    }
+];
+
 const printToDom = (stringToPrint, divId) => {
     document.getElementById(divId).innerHTML = stringToPrint;
 };
@@ -202,13 +211,13 @@ const albumspageprintbilder = () => {
 
 function buttonsHover() {
     let buttons = [...document.getElementsByTagName('button')];
-    buttons.forEach(function(el) {
-        el.addEventListener('mouseover', function() {
-            let btnColor = event.target; 
+    buttons.forEach(function (el) {
+        el.addEventListener('mouseover', function () {
+            let btnColor = event.target;
             btnColor.setAttribute('style', 'background-color:#ef6817');
         });
-        el.addEventListener('mouseout', function() {
-            let btnColor = event.target; 
+        el.addEventListener('mouseout', function () {
+            let btnColor = event.target;
             btnColor.setAttribute('style', 'background-color:#21201f');
         });
     });
@@ -232,12 +241,10 @@ function eventLister(month) {
         eventString +=      `<p class='jsEventsPar'>Date: ${month} ${events[month][i].date}</p>`
         eventString +=      `<p class='jsEventsPar'>Location: ${events[month][i].venue}</p>`
         eventString +=      `<p class='jsEventsPar'>ShowTime: ${events[month][i].time}</p>`
-        eventString +=      `<p class='jsEventsPar'>${events[month][i].description}</p>`
         eventString +=  `</div>`;
     };
     printToDom(eventString, 'events'+month+'Div');
 }
-
 
 function monthCardSelector() {
     document.getElementById('calendarButton').addEventListener('click', function() {
@@ -292,11 +299,10 @@ function eventListerCalendar(month) {
         let dateString = '' + (parseInt(events[month][i].date) + dateFirst);
         let eventString = document.getElementById('dateDiv'+dateString).innerHTML;
         eventString +=  `<div>`
-        eventString +=      `<h3 class='jsEventsHeader'>${events[month][i].name}</h3>`
-        eventString +=      `<p class='jsEventsPar'>Date: ${month} ${events[month][i].date}</p>`
-        eventString +=      `<p class='jsEventsPar'>Location: ${events[month][i].venue}</p>`
-        eventString +=      `<p class='jsEventsPar'>ShowTime: ${events[month][i].time}</p>`
-        eventString +=      `<p class='jsEventsPar'>${events[month][i].description}</p>`
+        eventString +=      `<h3 class='jsCalendarHeader'>${events[month][i].name}</h3>`
+        eventString +=      `<p class='jsCalendarPar'>Date: ${month} ${events[month][i].date}</p>`
+        eventString +=      `<p class='jsCalendarPar'>Location: ${events[month][i].venue}</p>`
+        eventString +=      `<p class='jsCalendarPar'>ShowTime: ${events[month][i].time}</p>`
         eventString +=  `</div>`;
         printToDom(eventString, 'dateDiv'+dateString);
         document.getElementById('dateDiv'+dateString).style.backgroundColor = '#ef6817';
@@ -346,6 +352,38 @@ function lastDayOfMonth() {
         }
     }
 }
+       
+const displayHomepageNews = () => {
+    let newString = '';
+    for (let i = 0; i < news.length; i++) {
+        newString += `<div class="homepage-news-article">`;
+        newString +=    `<img class="homepage-news-img" src="${news[i].newsImage}" alt="">`;
+        newString +=    `<p>${news[i].newsDate}</p>`;
+        newString +=    `<a href="${news[i].newsUrl}" target="_blank"><h3>${news[i].newsTitle}</h3></a>`;
+        newString += `</div>`;
+    }printToDom(newString, 'homepage-news');
+}
+
+const validateHomepageForm = () => {
+    let button = document.getElementById('homepage-submit-btn');
+    let outputFormString = "";
+    button.addEventListener('click', (event) => {
+        let nameInput = document.getElementById('form-name').value;
+        let emailInput = document.getElementById('form-email').value;
+        console.log(nameInput, emailInput);
+        if (nameInput !== "" && emailInput !== "") {
+            outputFormString = `Thank you for being a Kinky Slinky fan.`
+        }else if (nameInput !== "" && emailInput === "") {
+            outputFormString = `Please enter your email.`
+        }else if (nameInput === "" && emailInput !== ""){
+            outputFormString = `Please enter your name.`
+        }else {
+            outputFormString = `Please enter your name and email.`
+        }
+        printToDom(outputFormString, 'homepage-form-message');
+        event.preventDefault();
+    }
+)};
 
 function schedulePage() {
     if(window.location.pathname === '/html/schedule.html') {
@@ -360,6 +398,13 @@ function schedulePage() {
     }
 }
 
+const homePage = () => {
+   if (window.location.pathname === '/index.html') {
+       validateHomepageForm();
+       displayHomepageNews();
+   }
+}
+
 function albumsPageFnc() {
     if(window.location.pathname === '/html/albums.html')
     albumspageprintbilder();
@@ -368,5 +413,3 @@ function albumsPageFnc() {
 buttonsHover();
 schedulePage();
 albumsPageFnc();
-
-

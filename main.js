@@ -99,7 +99,7 @@ const events = {
     ],
     June: [
         {
-            name: 'Announcement of the Album Release Announcement Show, Show',
+            name: 'The Album Release Announcement Show, Show',
             date: '5',
             venue: 'South-Southeast of Eden',
             time: '8:00',
@@ -239,6 +239,9 @@ const getMemberById = (id) =>{
         let member = members[i];
         if (member.id === id){
             return member
+        }
+    }
+}
 
 function eventLister(month) {
     let eventString = `<h2 class='jsEventsMonth'>${month}</h2>`;
@@ -375,11 +378,7 @@ const needHelp = (event) => {
    printToDom(bandInfo,'test');
 }
 
-// function to loop thru band member info
-
-document.getElementById('picture-container').addEventListener('click',needHelp)
-
-const nfl = () =>{
+const nfl = () => {
     let imageString = '';
     for (let i=0;i<members.length;i++){
         imageString += `<div id="${members[i].id}">`;
@@ -458,6 +457,7 @@ function albumsPageFnc() {
 
 function bandMemberPage() {
     if(window.location.pathname === '/html/band-member.html') {
+        document.getElementById('picture-container').addEventListener('click',needHelp);
         nfl();
     }
 }
@@ -466,3 +466,4 @@ buttonsHover();
 homePage();
 schedulePage();
 bandMemberPage();
+albumsPageFnc();

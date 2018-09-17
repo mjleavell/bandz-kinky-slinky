@@ -373,10 +373,11 @@ nav {
     width: 50%;
     margin: 0 auto 0 auto;
     text-align: center;
+}
 
     /* albums page */
 
-.page{
+.page {
     color: white;
     display: flex;
     align-items: center;
@@ -396,6 +397,7 @@ nav {
 .wrapper{
     align-self: self-start;
 }
+
 /* .albreleaseinfo{
     margin-bottom: 100px
 } */

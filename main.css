@@ -324,6 +324,16 @@ nav {
 /* FOOTER STYLING */
 #footer {
     text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    background-color: #21201f;
+    padding-top: 1rem;
+}
+
+#footer-band {
+    text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;

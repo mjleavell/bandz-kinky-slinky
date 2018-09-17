@@ -98,7 +98,7 @@ nav {
 /* FOOTER STYLING */
 #footer {
     text-align: center;
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
     color: white;
@@ -127,9 +127,24 @@ nav {
 /* BAND MEMBER PAGE STYLING */
 #picture-container{
     display:flex;
-    justify-content: space-around;
+    justify-content:space-around;
+    align-items:center;
+    padding:45px;
 }
 
 .mem-pic{
-    width:300px;
+    width:250px;
     border-radius: 50%;
+}
+
+#bandPage{
+    text-align: center;
+    padding:10px;
+}
+
+#test{
+    background-color: gainsboro;
+    width: 50%;
+    margin: 0 auto 0 auto;
+    text-align: center;
+}

@@ -40,8 +40,6 @@ const getMemberById = (id) =>{
             return member
         }
     }
-
-
 }
 
 const needHelp = (event) => {
@@ -53,10 +51,10 @@ const needHelp = (event) => {
     bandInfo += `<div>`
     bandInfo +=     `<p>${member['name']}</p>`
     bandInfo +=     `<p>${member['instrument']}</p>`
+    bandInfo +=     `<p>Favorite Song: ${member['favoriteSong']}</p>`
     bandInfo += `</div>`;
    printToDom(bandInfo,'test');
 }
-
 
 // function to loop thru band member info
 

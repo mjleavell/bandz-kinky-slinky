@@ -2,7 +2,7 @@ let asylumsong = ["Remnants", "Asylum ", "The Infection ", "Warrior ", "Another 
 let evolutionsong = ["Are You Ready ", "No More ", "A Reason to Fight ", "In Another Time ", "Stronger on Your Own ", "Hold on to Memories ", "Saviour of Nothing ", "Watch You Burn ", "The Best Ones Lie ", "Already Gone "]
 let dethalbumsong = ["Murmaider ", "Go into the Water ", "Awaken ", "Bloodrocuted ", "Go Forth and Die ", "Fansong ", "Better Metal Snake ", "The Lost Vikings ", "Thunderhorse ", "Briefcase Full of Guts ", "Birthday Dethday ", "Hatredcopter ", "Castratikro ", "Face Fisted ", "Dethharmonic "]
 let dethalbum2song = ["Bloodlines ", "The Gears ", "Burn the Earth ", "Laser Cannon Deth Sentence ", "Black Fire Upon Us ", "Dethsupport ", "The Cyborg Slayers ", "I Tamper with the Evidence at the Murder Site of Odin ", "Murmaider II: The Water God ", "Comet Song ", "Symmetry ", "Volcano "]
-let dethalbum3song = ["I Ejaculate Fire ", "Crush the Industry", "Andromeda ", "The Galaxy ", "Starved ", "Killstardo Abominate ", "Ghostqueen ", "Impeach God ", "Biological Warfare ", "Skyhunter ", "The Hammer ", "Rejoin "]
+let dethalbum3song = ["Crush the Industry", "Andromeda ", "The Galaxy ", "Starved ", "Killstardo Abominate ", "Ghostqueen ", "Impeach God ", "Biological Warfare ", "Skyhunter ", "The Hammer ", "Rejoin "]
 
 let albumspage = {
 album: [
@@ -182,7 +182,7 @@ const albumspageprintbilder = () => {
         newString +=`<div class="page">`;
         newString +=`<div class="wraper">`;
         newString +=`<div class="albImg">`
-        newString +=    `<a href="${albumspage.album.purchase}"><img id="ablumImg_${i}" src="${albumspage.album[i].image}" alt="${albumspage.album[i].name}"></a>`
+        newString +=    `<a href="${albumspage.album[i].purchase}"><img id="ablumImg_${i}" src="${albumspage.album[i].image}" alt="${albumspage.album[i].name}"></a>`
         newString +=    `<ol>`
             for (let j = 0; j < albumspage.album[i].songs.length; j++){
             newString +=    `<li>${albumspage.album[i].songs[j]}</li>`

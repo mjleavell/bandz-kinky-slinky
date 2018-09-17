@@ -114,6 +114,27 @@ let first = -1;
 let date = 0;
 let dateCard = '';
 
+let news = [
+    {
+        newsImage:'../images/soundofsilence.png',
+        newsDate:'09/12/2018',
+        newsTitle:"What made 'The Sound of Silence' different?",
+        newsUrl: 'https://www.ultimate-guitar.com/news/general_music_news/disturbed_what_made_the_sound_of_silence_so_different_from_other_cover_songs_we_recorded.html'
+    },
+    {
+        newsImage:'./images/911soundofsilence.png',
+        newsDate:'09/11/2018',
+        newsTitle:"'Sound of Silence' 9/11 Tribute",
+        newsUrl:'https://waaf.radio.com/blogs/anthony-capobianco/september-11th-tribute-disturbeds-sounds-silence-will-bring-you-tears'
+    },
+    {
+        newsImage:'./images/Dethalbum.jpg',
+        newsDate:'04/18/2018',
+        newsTitle:"'Awaken' Hits Hot Rock Songs Chart",
+        newsUrl:'https://www.billboard.com/articles/columns/chart-beat/8317185/dethklok-awaken-hot-rock-songs-chart-batmetal-metalocalypse'
+    }
+];
+
 const printToDom = (stringToPrint, divId) => {
     document.getElementById(divId).innerHTML = stringToPrint;
 }
@@ -261,6 +282,17 @@ function lastDayOfMonth() {
         }
     }
 }
+       
+const displayHomepageNews = () => {
+    let newString = '';
+    for (let i = 0; i < news.length; i++) {
+        newString += `<div class="homepage-news-article">`;
+        newString +=    `<img class="homepage-news-img" src="${news[i].newsImage}" alt="">`;
+        newString +=    `<p>${news[i].newsDate}</p>`;
+        newString +=    `<a href="${news[i].newsUrl}" target="_blank"><h3>${news[i].newsTitle}</h3></a>`;
+        newString += `</div>`;
+    }printToDom(newString, 'homepage-news');
+}
 
 const validateHomepageForm = () => {
     let button = document.getElementById('homepage-submit-btn');
@@ -297,9 +329,10 @@ function schedulePage() {
 }
 
 const homePage = () => {
-    if (window.location.pathname === '/index.html') {
-        validateHomepageForm();
-    }
+   if (window.location.pathname === '/index.html') {
+       validateHomepageForm();
+       displayHomepageNews();
+   }
 }
 
 // CALL FUNCTIONS HERE

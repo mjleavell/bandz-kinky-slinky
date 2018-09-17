@@ -133,7 +133,7 @@ let news = [
         newsTitle:"'Awaken' Hits Hot Rock Songs Chart",
         newsUrl:'https://www.billboard.com/articles/columns/chart-beat/8317185/dethklok-awaken-hot-rock-songs-chart-batmetal-metalocalypse'
     }
-]
+];
 
 const printToDom = (stringToPrint, divId) => {
     document.getElementById(divId).innerHTML = stringToPrint;
@@ -291,7 +291,7 @@ const displayHomepageNews = () => {
         newString +=    `<p>${news[i].newsDate}</p>`;
         newString +=    `<a href="${news[i].newsUrl}" target="_blank"><h3>${news[i].newsTitle}</h3></a>`;
         newString += `</div>`;
-    } printToDom(newString, 'homepage-news');
+    }printToDom(newString, 'homepage-news');
 }
 
 const validateHomepageForm = () => {
@@ -330,8 +330,8 @@ function schedulePage() {
 
 const homePage = () => {
    if (window.location.pathname === '/index.html') {
-       displayHomepageNews();
        validateHomepageForm();
+       displayHomepageNews();
    }
 }
 

@@ -67,7 +67,7 @@ const nfl = () =>{
         printToDom(imageString,'picture-container');
     }; 
 }
-nfl();
+
 
 
 
@@ -81,4 +81,5 @@ nfl();
 
 
 // CALL FUNCTIONS 
-// buttonsHover();
+buttonsHover();
+nfl();

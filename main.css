@@ -256,6 +256,7 @@ nav {
     height: 80%;
     display: block;
     border: 4px #21201f outset;
+
 }
 
 .homepage-news-article h3{
@@ -323,7 +324,7 @@ nav {
 /* FOOTER STYLING */
 #footer {
     text-align: center;
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
     color: white;
@@ -347,4 +348,32 @@ nav {
     padding-bottom: 8px;
     margin-bottom: 0px;
     margin-top: 8px;
+}
+
+/* albums page */
+.page{
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 100px 
+
+ }
+ .albImg{
+     display: flex;
+ }
+.albImg > *{
+    width: 25vw;
+}
+
+.wrapper{
+    align-self: self-start;
+}
+/* .albreleaseinfo{
+    margin-bottom: 100px
+} */
+
+#albumTitle {
+    margin-top: 80px;
 }

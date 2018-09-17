@@ -1,3 +1,49 @@
+let asylumsong = ["Remnants", "Asylum ", "The Infection ", "Warrior ", "Another Way to Die ", "Never Again", "The Animal ", 'Crucified ', 'Serpentine ', 'My Child ', 'Sacrifice ', 'Innocence ', 'Ishfwilf ']
+let evolutionsong = ["Are You Ready ", "No More ", "A Reason to Fight ", "In Another Time ", "Stronger on Your Own ", "Hold on to Memories ", "Saviour of Nothing ", "Watch You Burn ", "The Best Ones Lie ", "Already Gone "]
+let dethalbumsong = ["Murmaider ", "Go into the Water ", "Awaken ", "Bloodrocuted ", "Go Forth and Die ", "Fansong ", "Better Metal Snake ", "The Lost Vikings ", "Thunderhorse ", "Briefcase Full of Guts ", "Birthday Dethday ", "Hatredcopter ", "Castratikro ", "Face Fisted ", "Dethharmonic "]
+let dethalbum2song = ["Bloodlines ", "The Gears ", "Burn the Earth ", "Laser Cannon Deth Sentence ", "Black Fire Upon Us ", "Dethsupport ", "The Cyborg Slayers ", "I Tamper with the Evidence at the Murder Site of Odin ", "Murmaider II: The Water God ", "Comet Song ", "Symmetry ", "Volcano "]
+let dethalbum3song = ["Crush the Industry", "Andromeda ", "The Galaxy ", "Starved ", "Killstardo Abominate ", "Ghostqueen ", "Impeach God ", "Biological Warfare ", "Skyhunter ", "The Hammer ", "Rejoin "]
+
+let albumspage = {
+album: [
+    {
+        name:"Evolution",
+        image:"../images/Evolution.jpg",
+        release:"10/19/2018",
+        songs:evolutionsong,
+        purchase:"https://www.amazon.com/Evolution-Disturbed/dp/B07GHPFHG2/ref=sr_1_2?ie=UTF8&qid=1537072286&sr=8-2&keywords=disturbed+evolution&dpID=51r9Iupe-BL&preST=_SY300_QL70_&dpSrc=srch"
+    },
+    {
+        name:"Dethalbum III",
+        image:"../images/DethalbumIII.jpg",
+        release:"10/16/2012",
+        songs:dethalbum3song,
+        purchase:"https://www.amazon.com/Dethalbum-III-Metalocalypse-Dethklok/dp/B0090PX5XA/ref=tmm_acd_swatch_0?_encoding=UTF8&qid=1537072493&sr=1-1-catcorr"
+    },
+    {
+        name:"Asylum",
+        image:"../images/asylum.jpg",
+        release:"8/31/2010",
+        songs:asylumsong,
+        purchase:"https://www.amazon.com/Asylum-Disturbed/dp/B003TUGUHU/ref=sr_1_1?s=music&ie=UTF8&qid=1537072549&sr=1-1&keywords=Asylum&dpID=61CCVajpD3L&preST=_SY300_QL70_&dpSrc=srch"
+    },
+    {
+        name:"Dethalbum II",
+        image:"../images/dethalbumII.jpg",
+        release:"9/29/2009",
+        songs:dethalbum2song,
+        purchase:"https://www.amazon.com/Dethalbum-II-Metalocalypse-Dethklok/dp/B002H3ETJG/ref=sr_1_1?s=music&ie=UTF8&qid=1537072588&sr=1-1&keywords=Dethalbum+II&dpID=5148MYvDWnL&preST=_SY300_QL70_&dpSrc=srch"
+    },
+    {
+        name:"Dethalbum",
+        image:"../images/dethalbum.jpg",
+        release:"9/25/2007",
+        songs:dethalbumsong,
+        purchase:"https://www.amazon.com/Dethalbum-Dethklok/dp/B000UGG38W/ref=sr_1_1?s=music&ie=UTF8&qid=1537072621&sr=1-1&keywords=Dethalbum&dpID=613NtwcRxlL&preST=_SY300_QL70_&dpSrc=srch"
+    }
+]
+}
+
 const events = {
     April: [
         {
@@ -137,7 +183,31 @@ let news = [
 
 const printToDom = (stringToPrint, divId) => {
     document.getElementById(divId).innerHTML = stringToPrint;
-}
+};
+
+const albumspageprintbilder = () => {
+    let newString = '';
+    for(let i = 0; i < albumspage.album.length; i++) {
+        newString +=`<div class="page">`;
+        newString +=`<div class="wraper">`;
+        newString +=`<div class="albImg">`
+        newString +=    `<a href="${albumspage.album[i].purchase}"><img id="ablumImg_${i}" src="${albumspage.album[i].image}" alt="${albumspage.album[i].name}"></a>`
+        newString +=    `<ol>`
+            for (let j = 0; j < albumspage.album[i].songs.length; j++){
+            newString +=    `<li>${albumspage.album[i].songs[j]}</li>`
+        }
+        newString +=`</ol>`
+        newString +=`</div>`
+        newString +=`<div class="albInfo">`
+        newString +=    `<h3>Album Name: ${albumspage.album[i].name}:</h3>`
+        newString +=    `<div class="albreleaseinfo">`
+        newString +=    `<h4>Release Date: ${albumspage.album[i].release}:</h4>`
+        newString +=    `</div>`
+        newString +=    `</div>`
+        newString +=`</div>`
+    };
+    printToDom(newString, 'albumscard');
+};
 
 function buttonsHover() {
     let buttons = [...document.getElementsByTagName('button')];
@@ -335,7 +405,11 @@ const homePage = () => {
    }
 }
 
-// CALL FUNCTIONS HERE
+function albumsPageFnc() {
+    if(window.location.pathname === '/html/albums.html')
+    albumspageprintbilder();
+}
+
 buttonsHover();
-homePage();
 schedulePage();
+albumsPageFnc();
